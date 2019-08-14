@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinalTestA.Objects
 {
-    class Hero
+    public class Hero
     {
         //Private Instance Variable
         private string m_fighting;
@@ -147,7 +147,7 @@ namespace FinalTestA.Objects
         List<Power> Powers;
         
         //Construtor
-        Hero()
+        public Hero()
         {
             // Instantiates an empty Power List
             Powers = new List<Power>();

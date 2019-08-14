@@ -12,11 +12,13 @@ using System.Threading.Tasks;
 
 namespace FinalTestA.Objects
 {
-    class Power
+    public class Power
     {
         //Public Properties
-        public string Name { get; set; }
-        public int Number { get; set; }
+        public string Power1 { get; set; }
+        public string Power2 { get; set; }
+        public string Power3 { get; set; }
+        public string Power4 { get; set; }
 
     }
 }

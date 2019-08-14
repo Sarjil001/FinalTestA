@@ -9,7 +9,8 @@ using System.Windows.Forms;
 /*
  * STUDENT NAME: SARJIL RAVAL
  * STUDENT ID: 301043757
- * DESCRIPTION: This is the Data Container Class
+ * DESCRIPTION: This Program Creates a Random Firstname and Lastname. It also Creates the Powers of the SuperHero and IT shows the Rating of thier skills
+ * Character Sheet Saves the Data And Opens the Saved data
  */
 
 namespace FinalTestA
@@ -18,6 +19,8 @@ namespace FinalTestA
     {
 
         public static HeroGenerator heroGenerator;
+        public static Hero character;
+        public static Power power;
 
         /// <summary>
         /// The main entry point for the application.
@@ -29,6 +32,8 @@ namespace FinalTestA
             Application.SetCompatibleTextRenderingDefault(false);
 
             heroGenerator = new HeroGenerator();
+            character = new Hero();
+            power = new Power();
 
             Application.Run(heroGenerator);
         }
