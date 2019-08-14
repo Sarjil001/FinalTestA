@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 /*
  * STUDENT NAME: SARJIL RAVAL
@@ -47,6 +48,23 @@ namespace FinalTestA.Views
             }
         }
 
-      
+        private void GenerateNameButton_Click(object sender, EventArgs e)
+        {
+            {
+                //Inputing First Name
+                string[] lines;
+                lines = File.ReadAllLines("firstNames.txt");
+                Random rand = new Random();
+                int index = rand.Next(lines.Length);
+                FirstNameDataLabel.Text = lines[index];
+
+                //Inputing Last Name
+                string[] Line;
+                Line = File.ReadAllLines("lastNames.txt");
+                Random rands = new Random();
+                int indexs = rand.Next(Line.Length);
+                LastNameDataLabel.Text = Line[indexs];
+            }
+        }
     }
 }
