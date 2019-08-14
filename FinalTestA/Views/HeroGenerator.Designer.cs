@@ -421,6 +421,7 @@
             this.GenerateAbilitiesButton.TabIndex = 5;
             this.GenerateAbilitiesButton.Text = "Generate Abilities";
             this.GenerateAbilitiesButton.UseVisualStyleBackColor = true;
+            this.GenerateAbilitiesButton.Click += new System.EventHandler(this.GenerateAbilitiesButton_Click);
             // 
             // PowerPage
             // 
@@ -588,8 +589,10 @@
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.MainTabControl);
             this.MainMenuStrip = this.HeroMenuStrip;
+            this.MinimizeBox = false;
             this.Name = "HeroGenerator";
             this.Text = "Hero Generator";
+            this.Load += new System.EventHandler(this.HeroGenerator_Load);
             this.MainTabControl.ResumeLayout(false);
             this.IdentityPage.ResumeLayout(false);
             this.IdentityPage.PerformLayout();

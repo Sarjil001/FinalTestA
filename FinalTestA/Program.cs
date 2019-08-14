@@ -1,4 +1,5 @@
-﻿using FinalTestA.Views;
+﻿using FinalTestA.Objects;
+using FinalTestA.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace FinalTestA
 {
-    static class Program
+    public static class Program
     {
 
         public static HeroGenerator heroGenerator;

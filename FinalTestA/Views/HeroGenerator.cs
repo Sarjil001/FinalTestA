@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 
 /*
  * STUDENT NAME: SARJIL RAVAL
@@ -17,6 +18,10 @@ namespace FinalTestA.Views
 {
     public partial class HeroGenerator : FinalTestA.Views.MasterForm
     {
+        List<string> firstNameList;
+        List<string> lastNameList;
+        Random random = new Random();
+
         public HeroGenerator()
         {
             InitializeComponent();
@@ -50,21 +55,46 @@ namespace FinalTestA.Views
 
         private void GenerateNameButton_Click(object sender, EventArgs e)
         {
-            {
-                //Inputing First Name
-                string[] lines;
-                lines = File.ReadAllLines("firstNames.txt");
-                Random rand = new Random();
-                int index = rand.Next(lines.Length);
-                FirstNameDataLabel.Text = lines[index];
-
-                //Inputing Last Name
-                string[] Line;
-                Line = File.ReadAllLines("lastNames.txt");
-                Random rands = new Random();
-                int indexs = rand.Next(Line.Length);
-                LastNameDataLabel.Text = Line[indexs];
-            }
+            GenerateNames();
         }
+
+        public void loadnames()
+        {
+            //Inputing First Name
+           firstNameList = File.ReadAllLines("firstNames.txt").ToList();
+            //Inputing Last Name
+           lastNameList = File.ReadAllLines("lastNames.txt").ToList();
+        }
+
+        public void GenerateNames()
+        {
+            //Generating Random Name
+
+            int index = random.Next(firstNameList.Count);
+            FirstNameDataLabel.Text = firstNameList[index];
+
+            int indexs = random.Next(lastNameList.Count);
+            LastNameDataLabel.Text = lastNameList[indexs];
+        }
+
+        private void HeroGenerator_Load(object sender, EventArgs e)
+        {
+            loadnames();
+            GenerateNames();
+        }
+
+        private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
+        {
+            FightingDataLabel.Text= random.Next(1,15).ToString();
+            AgilityDataLabel.Text = random.Next(1, 15).ToString();
+            StrengthDataLabel.Text = random.Next(1, 15).ToString();
+            EnduranceDataLabel.Text = random.Next(1, 15).ToString();
+            ReasonDataLabel.Text = random.Next(1, 15).ToString();
+            IntuitionDataLabel.Text = random.Next(1, 15).ToString();
+            PsycheDataLabel.Text = random.Next(1, 15).ToString();
+            PopularityDataLabel.Text = random.Next(1, 15).ToString();
+
+        }
+
     }
 }
